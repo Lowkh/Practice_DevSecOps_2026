@@ -66,36 +66,6 @@ For each scenario, think about:
 
 # Scenario 1
 
-A prepared code review note says:
-
-> “User input from the search box is inserted directly into a database query string. The search feature appears to work in normal testing, but the pattern is unsafe.”
-
-### Extra context
-
-The team is reviewing a search feature before release. Functional testing shows that users can type a product name into the search bar and receive results normally. However, a security-related review note warns that the way the input is handled in code may be unsafe even though the visible feature appears to work as expected.
-
-The release team is unsure whether this should be treated as a real defect because no obvious failure happened during ordinary testing. QA has been asked to help explain what the finding means, what workflow it affects, and whether it should influence release confidence.
-
-### Points to think about
-
-- The feature still works for normal users.
-- The concern came from a code-related review, not from a runtime screenshot or a package list.
-- The question is not only “Does the feature work?” but also “Is the way it handles user input safe?”
-- Participants should think about whether a risky pattern can matter even before a confirmed exploit is shown.
-
-## Questions
-
-1. What was found?
-2. Is this SAST, DAST, or SCA?
-3. Which workflow is affected?
-4. Is the issue theoretical, reachable, or user-impacting?
-5. What evidence supports the conclusion?
-6. Should this affect release confidence? Why?
-
----
-
-# Scenario 2
-
 A prepared runtime test note says:
 
 > “A test endpoint returned account information without the expected login check. The response was observed in a running test environment.”
@@ -124,7 +94,7 @@ The product owner first assumed this might only be a minor functional issue beca
 
 ---
 
-# Scenario 3
+# Scenario 2
 
 A prepared dependency review note says:
 
@@ -149,6 +119,36 @@ Some team members assume this may be less important than a visible bug because c
 2. Is this SAST, DAST, or SCA?
 3. Which workflow is affected?
 4. Why does dependency risk matter here?
+5. What evidence supports the conclusion?
+6. Should this affect release confidence? Why?
+
+---
+
+# Scenario 3
+
+A prepared code review note says:
+
+> “User input from the search box is inserted directly into a database query string. The search feature appears to work in normal testing, but the pattern is unsafe.”
+
+### Extra context
+
+The team is reviewing a search feature before release. Functional testing shows that users can type a product name into the search bar and receive results normally. However, a security-related review note warns that the way the input is handled in code may be unsafe even though the visible feature appears to work as expected.
+
+The release team is unsure whether this should be treated as a real defect because no obvious failure happened during ordinary testing. QA has been asked to help explain what the finding means, what workflow it affects, and whether it should influence release confidence.
+
+### Points to think about
+
+- The feature still works for normal users.
+- The concern came from a code-related review, not from a runtime screenshot or a package list.
+- The question is not only “Does the feature work?” but also “Is the way it handles user input safe?”
+- Participants should think about whether a risky pattern can matter even before a confirmed exploit is shown.
+
+## Questions
+
+1. What was found?
+2. Is this SAST, DAST, or SCA?
+3. Which workflow is affected?
+4. Is the issue theoretical, reachable, or user-impacting?
 5. What evidence supports the conclusion?
 6. Should this affect release confidence? Why?
 
